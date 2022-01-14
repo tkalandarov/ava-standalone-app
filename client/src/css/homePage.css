@@ -1,0 +1,292 @@
+main {
+  margin-top: 90px;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+}
+
+.intro-text__container {
+  position: relative;
+  z-index: 500;
+}
+
+.intro-text {
+  position: relative;
+  width: 100%;
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+.intro-text__text {
+  font-size: 34px;
+  line-height: 42px;
+  max-width: 340px;
+  color: #151515;
+  margin: 0 0 30px;
+  animation-name: fadeUp;
+  animation-duration: 0.25s;
+}
+
+.intro-text__description {
+  margin-bottom: 60px;
+  max-width: 340px;
+  animation-name: fadeUp;
+  animation-duration: 0.5s;
+  animation-delay: 0.1s;
+}
+
+@media (min-width: 1024px) {
+  .intro-text {
+    padding: 210px 0 120px;
+    margin-top: -140px;
+    height: calc(100vh + 140px);
+  }
+
+  .intro-text__text {
+    font-size: 70px;
+    max-width: 979px;
+    line-height: 80px;
+  }
+
+  .intro-text__description {
+    max-width: 979px;
+  }
+}
+
+.fadeUp {
+  animation-name: fadeUp;
+  animation-duration: 1s;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro-text__button {
+  display: inline-block;
+  padding: 5px 20px;
+  background-color: #151515;
+  border-radius: 100px;
+  font-size: 16px;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+
+.intro-text__button:hover {
+  background-color: #765cff;
+}
+
+.intro-text__ava {
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-image: url("../img/ava-intro.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  right: 10%;
+  bottom: -70px;
+}
+
+@media (min-width: 1024px) {
+  .intro-text__ava {
+    display: block;
+  }
+}
+
+#about {
+  padding: 5%;
+}
+
+#about .paragraph__side{
+  margin-right: 5%;
+}
+
+.intro-text__ava:hover {
+  transform: scale(1.1);
+}
+
+.bg-black {
+  background: #181818;
+  color: #fff;
+}
+
+.paragraph {
+  display: flex;
+  justify-content: space-between;
+  margin: 5%;
+  flex-wrap: wrap;
+}
+
+.paragraph-card {
+  border-radius: 25px;
+  background-color: #363636;
+}
+
+.paragraph__side {
+  margin-top: 5%;
+  margin-left: 10%;
+  width: 30%;
+}
+
+@media (max-width: 1500px) {
+  .paragraph__side {
+    width: 100%;
+    max-width: 100%;
+    flex-basis: 100%;
+    flex-grow: unset;
+  }
+}
+
+.paragraph__title {
+  font-size: 32px;
+  line-height: 38px;
+}
+
+.paragraph__text {
+  color: #9fa4a8;
+  font-size: 19px;
+  line-height: 28px;
+}
+
+.convesation-img {
+  align-self: end;
+  margin-left: auto;
+  border-radius: 25px;
+}
+
+.paragraph__clock-image-wrapper {
+  width: 240px;
+}
+
+@media (max-width: 1500px) {
+  #features {
+    flex-direction: column-reverse;
+  }
+
+  .paragraph__clock-image-wrapper {
+    margin-left: 0;
+    width: 40%;
+  }
+}
+
+.paragraph-equal-sides .paragraph__left,
+.paragraph-equal-sides .paragraph__right {
+  width: 50%;
+  flex-basis: 50%;
+  flex-grow: unset;
+}
+
+@media (max-width: 760px) {
+  .paragraph-equal-sides .paragraph__left,
+  .paragraph-equal-sides .paragraph__right {
+    width: 100%;
+    flex-basis: 100%;
+  }
+}
+
+.paragraph-equal-sides .paragraph__left {
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.paragraph-equal-sides .paragraph__right {
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: baseline;
+}
+
+.column .paragraph-card {
+  border-radius: 26px;
+  margin-bottom: 20px;
+  padding: 60px;
+  background: #363636;
+  width: 100%;
+}
+
+@media (max-width: 760px) {
+  .column .paragraph-card{
+    padding: 36px;
+  }
+}
+
+.paragraph-card-img {
+  object-fit: fill;
+  border-radius: 26px;
+  margin-bottom: 20px;
+}
+
+.demo {
+  padding: 120px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.demo__title {
+  font-size: 34px;
+  line-height: 42px;
+}
+
+.demo .paragraph-card {
+  background-color: #f3f7fb;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.demo-button {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  background-color: #151515;
+  border-radius: 100px;
+  border: none;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+  width: 100%;
+  text-align: center;
+}
+
+.demo-button:hover {
+  background-color: #765cff;
+}
+
+.demo .paragraph-card img {
+  transition: 0.5s ease-in-out;
+}
+
+.demo .paragraph-card:hover img {
+  filter: blur(3px);
+}
+
+.demo .paragraph-card:hover .demo-button {
+  display: initial;
+}
