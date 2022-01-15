@@ -1,0 +1,96 @@
+.demoPage__title-container {
+  position: relative;
+  width: 100%;
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .demoPage__title-container {
+    padding: 210px 5% 40px;
+    margin-top: -140px;
+  }
+}
+
+.demoPage__title {
+  padding-top: 60px;
+  text-align: center;
+  font-size: 34px;
+  line-height: 42px;
+  color: #151515;
+  animation-name: fadeUp;
+  animation-duration: 0.25s;
+}
+
+@media (min-width: 1024px) {
+  .demoPage__title {
+    font-size: 70px;
+    max-width: 979px;
+    line-height: 80px;
+  }
+}
+
+@media (min-width: 760px) {
+  .demoPage .paragraphs-container {
+    width: 40%;
+    flex-basis: 40%;
+    flex-grow: unset;
+  }
+}
+
+.demoPage .paragraph {
+  display: flex;
+  padding: 32px;
+  margin-top: 0;
+  background: #f3f7fb;
+  color: #1f1f1f;
+  height: 240px;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.demoPage .paragraph:hover {
+  transform: scale(1.05);
+}
+
+.demoPage .paragraph__title {
+  display: inline-flex;
+  border-bottom: 2px dotted #1f1f1f;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 1.2em;
+}
+
+.demoPage .paragraph__ico {
+  margin-top: 14px;
+}
+
+.demoPage .paragraph__content {
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 10px;
+}
+
+.paragraph__description {
+  color: #424343;
+}
+
+.grid {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.image-preview {
+  border-radius: 26px;
+  background: #f3f7fb;
+  height: 100%;
+  padding: 10px;
+}
+
+@media (max-width: 760px) {
+    .image-preview {
+        display: none;
+      }
+  }

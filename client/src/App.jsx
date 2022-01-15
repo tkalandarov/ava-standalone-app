@@ -7,14 +7,14 @@ import {
 
 import AppModals from "./components/Modals/AppModals";
 import { HomePage } from "./pages/HomePage";
-import { Dashboard } from "./pages/Dashboard";
+import { DemoPage } from "./pages/DemoPage";
 
 const App = () => {
   return (
     <Router>
       <div className="app">
         <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/demo" element={<DemoPage />} />
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

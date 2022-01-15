@@ -10,7 +10,6 @@ import Girl from "../img/girl.jpg";
 import Cogs from "../img/cogs.svg";
 import Graph from "../img/graph.svg";
 import Laptop from "../img/laptop.png";
-import Devices from "../img/ava-devices.png";
 
 export const HomePage = () => {
   return (
@@ -129,7 +128,7 @@ export const HomePage = () => {
         <section id="demo" className="demo">
           <h1 className="intro-text__text">Try our Live Demo</h1>
           <div className="paragraph-card">
-            <img src={Devices} alt="Laptop" width={600} />
+            <img src={Laptop} alt="Laptop" width={600} />
             <a className="button demo-button" href="/demo">
               Launch AVA
               <svg
