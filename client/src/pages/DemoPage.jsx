@@ -39,7 +39,7 @@ export const DemoPage = () => {
           </a>
           <a
             className="paragraph dashboard-link"
-            href="/demo/student"
+            href="/demo/dashboard"
             onPointerOver={() => setImageState(2)}
           >
             <div className="paragraph__ico">

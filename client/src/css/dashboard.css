@@ -1,0 +1,138 @@
+.page-content {
+  background: #f3f4f6;
+  width: 100%;
+  height: 100%;
+  padding: 0 5%;
+}
+
+.dashboardPage__title {
+  padding: 100px 5px 0;
+}
+
+.dashboardPage__title a{
+  color: #635AFF;
+}
+
+.dashboardPage__title span{
+  font-size: 36px;
+}
+
+.dashboardPage .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+
+.stats {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  height: 150px;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: initial;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 5px 10px;
+  background-size: 200px 150px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+#stats1 {
+  background-image: url("../img/graphs/graph-01.png");
+}
+#stats2 {
+  background-image: url("../img/graphs/graph-02.png");
+}
+#stats3 {
+  background-image: url("../img/graphs/graph-03.png");
+}
+#stats4 {
+  background-image: url("../img/graphs/graph-04.png");
+}
+#stats5 {
+  background-image: url("../img/graphs/graph-05.png");
+}
+
+.stats__label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  color: #818ea3;
+  text-align: center;
+}
+
+.stats__value {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 1rem 0;
+  color: #3d5170;
+}
+
+.stats__percentage {
+  font-size: 0.75rem;
+  color: #17c671;
+  position: relative;
+  display: table;
+  padding-left: 0.9375rem;
+}
+
+.stats__percentage::before {
+  content: "";
+  background-image: url("../img/graphs/arrowUp.svg");
+  width: 0.75rem;
+  height: 0.375rem;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+
+.dashboard__graphs{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 15px;
+}
+
+.dashboard__graphs .graph-wrapper{
+  width: 49%;
+  flex-basis: 49%;
+  flex-grow: unset;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 15px 0;
+}
+
+.dashboard__graphs .graph-wrapper .graph{
+  height: 300px;
+}
+
+@media (max-width: 1024px) {
+  .dashboard__graphs .graph-wrapper{
+    width: 100%;
+    height: 350px;
+    flex-basis: 100%;
+    flex-grow: unset;
+  }
+}
+@media (max-width: 600px) {
+  .dashboardPage .row{
+    justify-content: center;
+  }
+}
+
