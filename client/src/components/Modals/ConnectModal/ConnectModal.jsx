@@ -23,12 +23,28 @@ export const ConnectModal = (props) => {
           <div className="connectFormWrapper">
             <div className="connectFormTitle">You Info</div>
             <form className="connectForm" id="connectForm">
-              <input className="connectNameInput" type="text" placeholder="Name"/>
-              <input className="connectEmailInput" type="email" placeholder="Email"/>
-              <input className="connectOrgInput" type="text" placeholder="Organization"/>
+              <input
+                className="connectNameInput"
+                type="text"
+                placeholder="Name"
+              />
+              <input
+                className="connectEmailInput"
+                type="email"
+                placeholder="Email"
+              />
+              <input
+                className="connectOrgInput"
+                type="text"
+                placeholder="Organization"
+              />
             </form>
           </div>
-          <button type="submit" className="connectFormSubmit" form="connectForm">
+          <button
+            type="submit"
+            className="connectFormSubmit"
+            form="connectForm"
+          >
             <span>Submit</span>
           </button>
         </div>

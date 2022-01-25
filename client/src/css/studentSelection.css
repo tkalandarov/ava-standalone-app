@@ -1,0 +1,62 @@
+.studentSelectionPage .page-content {
+  background: none;
+}
+
+.studentSelectionPage .students {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 60px 0 0;
+}
+
+.studentSelectionPage .card {
+  padding: 15px;
+  margin: 10px 5px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f3f7fb;
+  flex-basis: 30%;
+  width: 30%;
+  flex-grow: unset;
+  height: 400px;
+  transition: all .2s;
+}
+
+.studentSelectionPage .card:hover{
+    transform: scale(1.05);
+}
+
+.studentSelectionPage .card__title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 1rem 0;
+  color: #3d5170;
+}
+
+.studentSelectionPage .students__img {
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+    margin: 5px 0 25px;
+  }
+
+.studentSelectionPage .card__text {
+  color: #424343;
+}
+
+@media (max-width: 600px) {
+  .studentSelectionPage .card__text {
+    font-size: 12px;
+  }
+}
+@media (max-width: 900px) {
+  .studentSelectionPage .card {
+    flex-basis: 80%;
+    width: 80%;
+    flex-grow: unset;
+    height: auto;
+  }
+}

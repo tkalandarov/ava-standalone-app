@@ -17,6 +17,12 @@
   font-size: 36px;
 }
 
+@media (max-width: 600px) {
+  .dashboardPage__title span{
+    font-size: 24px;
+  }
+}
+
 .dashboardPage .row {
   display: flex;
   align-items: center;

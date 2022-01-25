@@ -1,12 +1,12 @@
 import React from "react";
 import "./AppModals.css";
 
-import AvaModal from "./AvaModal/AvaModal";
+import ChatModal from "./ChatModal/ChatModal";
 import { ConnectModal } from "./ConnectModal/ConnectModal";
 import { NavMenuModal } from "./NavMenuModal/NavMenuModal";
 
 
-import { AVA_MODAL, CONNECT_MODAL, NAVMENU_MODAL } from "./ModalsList";
+import { CHAT_MODAL, CONNECT_MODAL, NAVMENU_MODAL } from "./ModalsList";
 
 import { connect } from "react-redux";
 import { toggleModal } from "../../redux/appActions";
@@ -26,8 +26,8 @@ export const AppModals = (props) => {
             className="modalsCloseArea"
             onClick={() => props.toggleModal(props.activeModal)}
           ></div>
-          {props.activeModal === AVA_MODAL && (
-            <AvaModal onCloseClicked={onCloseClicked} />
+          {props.activeModal === CHAT_MODAL && (
+            <ChatModal onCloseClicked={onCloseClicked} />
           )}
           {props.activeModal === CONNECT_MODAL && (
             <ConnectModal onCloseClicked={onCloseClicked} />

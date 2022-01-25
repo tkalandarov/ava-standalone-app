@@ -30,7 +30,7 @@ export const DemoPage = () => {
               <img src={StudentIcon} alt="" width="24" height="24" />
             </div>
             <div className="paragraph__content">
-              <div className="paragraph__title">Student's View</div>
+              <div className="paragraph__title">Chat with AVA</div>
               <div className="paragraph__description">
                 Feel the experience of having a conversation with AVA as a
                 student.

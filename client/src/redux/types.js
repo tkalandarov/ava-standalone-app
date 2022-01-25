@@ -1,1 +1,2 @@
 export const TOGGLE_MODAL = "TOGGLE_MODAL";
+export const SELECT_STUDENT = "SELECT_STUDENT";

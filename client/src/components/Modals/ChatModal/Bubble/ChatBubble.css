@@ -1,0 +1,74 @@
+.chat-bubble{
+    position: relative;
+    max-width: 100%;
+    min-width: 40px;
+    margin-bottom: 10px;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    clear: both;
+    color: #fff!important;
+    border-radius: 12px!important;
+    background-color: #4F5050;
+    float: left;
+    transform: translateY(10px);
+    opacity: 0;
+    animation: bubbleAppearance .3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s forwards;
+}
+
+@keyframes bubbleAppearance {
+    60%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.user-chat-bubble{
+    background-color: #635AFF;
+    float: right;
+}
+
+.chat-bubble__text{
+    text-align: left;
+    padding-right: 58px;
+    color: #fff!important;
+    display: inline-block;
+    padding-top: 12px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    max-width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+    line-height: 19.6px;
+    text-indent: 0;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    box-sizing: border-box;
+    font-size: 15px!important;
+    vertical-align: middle;
+}
+
+.chat-bubble__status{
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    font-size: 9px;
+    right: 11px;
+    bottom: 4px;
+    color: hsla(0,0%,100%,.6);
+}
+
+.chat-bubble__ticks{
+    background-image: url(../../../../img/chat/ticks.svg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 14px;
+    height: 12px;
+    margin-left: 3px;
+}
