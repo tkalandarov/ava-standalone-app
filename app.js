@@ -3,7 +3,6 @@ const config = require("config");
 const mongoose = require("mongoose");
 
 const app = express();
-const config = require("config");
 
 const PORT = config.get("port") || 5000;
 
