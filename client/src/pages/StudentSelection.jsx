@@ -9,10 +9,20 @@ import { selectStudent } from "../redux/demoActions";
 import { toggleModal } from "../redux/appActions";
 import { bindActionCreators } from "redux";
 
+import axios from "axios";
+
 import "../css/studentSelection.css";
 
 export const StudentSelection = (props) => {
   const onStudentSelected = (student) => {
+    const students = [Lisa, Tim, Khan];
+    const studentObj = students.find(x => x.name == student);
+    axios.post("http://localhost:5000/student", {
+      id: studentObj.id
+    })
+    .then(res => {
+      // console.log(res);
+    });
     props.selectStudent(student);
     props.toggleModal(CHAT_MODAL);
   };

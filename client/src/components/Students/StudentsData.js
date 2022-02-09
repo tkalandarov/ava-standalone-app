@@ -7,6 +7,7 @@ export const Lisa = {
     entryTerm: "Fall 2021",
     GPA: 3.71,
     advisor: "Allyson Smith",
+    id: "U00000000"
 };
 export const Tim = {
     name: "Tim",
@@ -18,6 +19,7 @@ export const Tim = {
     entryTerm: "Fall 2020",
     GPA: 3.86,
     advisor: "Megan Stowe",
+    id: "U11111111"
 };
 export const Khan = {
     name: "Khan",
@@ -28,4 +30,5 @@ export const Khan = {
     entryTerm: "Fall 2020",
     GPA: 3.67,
     advisor: "Megan Braunstein",
+    id: "U22222222"
 };

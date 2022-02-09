@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import moment from "moment";
 
 import { connect } from "react-redux";
-import { ChatBubble } from "./Bubble/ChatBubble";
+import { ChatBubble }  from "./Bubble/ChatBubble";
 import "./ChatModal.css";
+
+import axios from "axios";
 
 export const ChatModal = (props) => {
   const [userInput, setUserInput] = useState("");
@@ -15,7 +17,7 @@ export const ChatModal = (props) => {
         props.selectedStudent +
         "! My name is AVA. How can I help you?",
       time: moment().format("h:mm A"),
-      sentByUser: false,
+      sentByUser: false
     },
   ]);
 
@@ -30,7 +32,18 @@ export const ChatModal = (props) => {
     addNewMessage({
       text: userInput,
       time: moment().format("h:mm A"),
-      sentByUser: true,
+      sentByUser: true
+    });
+
+    axios.post("http://localhost:5000/chat", {
+      query: userInput
+    })
+    .then(res => {
+      addNewMessage({
+        text: res.data,
+        time: moment().format("h:mm A"),
+        sentByUser: false
+      });
     });
   };
 
@@ -103,7 +116,7 @@ export const ChatModal = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    selectedStudent: state.demoReducer.selectedStudent,
+    selectedStudent: state.demoReducer.selectedStudent
   };
 };
 
