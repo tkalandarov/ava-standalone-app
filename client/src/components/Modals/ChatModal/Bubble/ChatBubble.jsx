@@ -1,5 +1,8 @@
 import React from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import "./ChatBubble.css";
+// import { set } from "mongoose";
 
 export const ChatBubble = (props) => {
   const classes = ["chat-bubble"];
@@ -9,7 +12,9 @@ export const ChatBubble = (props) => {
     <div
       className={classes.join(" ")}
     >
-      <div className="chat-bubble__text">{props.text}</div>
+      <div className="chat-bubble__text">
+        <ReactMarkdown children={props.text} remarkPlugins={[remarkGfm]}></ReactMarkdown>
+      </div>
       <div className="chat-bubble__status">
         {props.time}
         {props.sentByUser && <div className="chat-bubble__ticks"></div>}

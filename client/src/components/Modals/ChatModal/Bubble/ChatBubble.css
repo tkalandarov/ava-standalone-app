@@ -54,6 +54,10 @@
     vertical-align: middle;
 }
 
+.chat-bubble__text p {
+    margin: 0;
+}
+
 .chat-bubble__status{
     display: flex;
     align-items: flex-end;

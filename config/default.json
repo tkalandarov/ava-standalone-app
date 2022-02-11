@@ -1,3 +1,16 @@
 {
-    "port": 5000
+    "port": 5000,
+    "project_id": "standalone-ava-demo",
+    "google_credentials": {
+        "type": "service_account",
+        "project_id": "standalone-ava-demo",
+        "private_key_id": "11fb29c5fd6e53a58dceaaca151d4c2a1c5ef58a",
+        "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDilKOFuh57ea+D\ntaWffQDM4WGouGTDHSXSv8CXTtkETcDWgeG6zfInheXQPj2Ixjx3BbLUnbcQ5J8p\ndPaAX2CF35OOPVnI6ss+T6SvIcY2jkCgJtTWo/h0spnf8k8KQpoLbh8bNY/7p25e\nbknGI1L4Z5CMKNwo0wfwv4ipFlLILTMWb5hBiC/XT8gtdfQ5rAbGdrMGsfOBKsVB\n30Yt0+rQRivYqLBICW8Xf2Rtj2BVZyNLR8gYRp+BtpoOdex72PD3+KoLbBRwT1sS\nyjS3vrggiT7R4zpZpDXdYp172zJMELco4KrNNSZSzjUTwlyNDnks7Q/ex1E7MuQi\nZ8qhYg3HAgMBAAECggEAI7qT7T1ucG1oK4O+9zRV+6NlVp6lEk4MAydGQ6sk9inF\n881iqVCvvmMTMdBEEcejYegIeBXaopOlNCYDzOBoBGmUsgRN89cab4ai4xRCAPj+\nNdg0YxhTeyDCukP9ChLQibw2tCqxEVoolu7F5rRL8WxwqGQKZiGeNJdvVwJ0e/4L\nVOsaculZLRW2zTaEEtnOVPh9PnNfXiZjf7Ztry3Wt6jQG6UOr3rLzVQeRai6gH3Y\nhL3fCBWArpCE75JA8GFC86xUq9a/8eCBbp73yK4jwL/YX+c5a6O5mRg1bmDcAlrR\nZU57OaZGVT4UNOqbglnP6bV/1P/ZA1kXVzIpxq/JsQKBgQD3An4sFMXcoXP6BPVy\nmGkI7DOp1Y6zyQcFCatur3ljciuvwG/bJz4G3X6j73h6zWvYWtgU/yeljyz1+qQK\nIqyCNDFYR1CSexEp7eJjJnGh5s8xM+BUwstUo0p4YBTi2SeLY1aw0S7G1CYwBn+o\ntw2UhsN7QtPKl0BS4A43Pb0K7wKBgQDq08xQRe6n9/92hpGy+5dE3MKOSLajKCfO\nPOT5nTK04Kd5nUaF7XjT1yYgPbUgaIVlLskZLw46aQQkPpRc+DQajO9iJO4SwiTi\nUTIj96CGJbAmUAxCxIGaVaMX7HHvrx5rhdyrCJR/XP1QfYOxcT+mbQlllHhJM5ad\nLPFep1+KqQKBgQC53XRXcyIXjJ2aSlTu7+RJRILzjrCcc+4GSmpnFT8AJ47b5q/E\ndljkDZMXhEBiF2TJHkJuOjj5CS1JwlnhDopER0XCKZdlQZl+tXOeK/VhYC4T1fc9\nkH4zp9OHlLTipYhuCEfZMO5DyqsZhCpXJ7beRjGd9IEtdnZ+Zf4MbzZqnQKBgQCm\nwjl5V/AfABI+TVnyTJAjqtHO0PxB6SY7YysHyAZWRKMpzfJi8Ty40zST+L5DgXYZ\nYJwWckAcYq86PeaGDwyRPjxQ6gDW+V/QB/EfcZ5hJSpuSrIqR/nxa5ciShqvJyDn\nImyOWM17lMGfA0MeI1ocCZp+tGynLydp/px5p0pF4QKBgQC+Zq5ZKk1QKzmFgPzv\n2y2GcsSKRm0FqLlqeLyuUwsRu+0WPZMMkb7AEWFlenT385pbWG6NjDgJvCjF0Vul\ntS0uOglgMtpKVpx3W4p5zdFaIrLHJX2eCym+M7E9RwaEkpRRiuKBepc44+S5vYZO\nhchJjBozgViokKZGy5/rUPM3bA==\n-----END PRIVATE KEY-----\n",
+        "client_email": "ava-demo@standalone-ava-demo.iam.gserviceaccount.com",
+        "client_id": "112669567037829273542",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ava-demo%40standalone-ava-demo.iam.gserviceaccount.com"
+    }         
 }
