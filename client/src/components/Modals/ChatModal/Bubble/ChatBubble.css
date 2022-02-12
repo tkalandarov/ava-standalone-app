@@ -58,6 +58,13 @@
     margin: 0;
 }
 
+.chat-bubble__text p a {
+    line-height: inherit;
+    font-size: inherit;
+    color: inherit;
+    text-decoration: underline;
+}
+
 .chat-bubble__status{
     display: flex;
     align-items: flex-end;

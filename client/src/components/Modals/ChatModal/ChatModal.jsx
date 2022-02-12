@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import moment from "moment";
 
 import { connect } from "react-redux";
@@ -20,6 +20,7 @@ export const ChatModal = (props) => {
       sentByUser: false
     },
   ]);
+  const chatContainerRef = useRef(null);
 
   const addNewMessage = (message) => {
     setMessages((messages) => [...messages, message]);
@@ -46,6 +47,18 @@ export const ChatModal = (props) => {
       });
     });
   };
+
+  const scrollIntoView = () => {
+    setTimeout(() => {
+      if (chatContainerRef.current) {
+        chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+      }
+    }, 50);
+  };
+
+  useEffect(() => {
+    scrollIntoView();
+  });
 
   const sendIfEnter = (e) => {
     if (e.key === "Enter" && sendEnabled) {
@@ -84,7 +97,7 @@ export const ChatModal = (props) => {
         </div>
       </div>
 
-      <div className="chatModal__body">
+      <div className="chatModal__body" ref={chatContainerRef}>
         {messages.map((message, index) => (
           <ChatBubble
             text={message.text}
