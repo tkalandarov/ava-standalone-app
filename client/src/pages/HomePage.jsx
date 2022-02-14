@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "../css/homePage.css";
 import Header from "../components/Header/Header";
@@ -12,6 +12,10 @@ import Graph from "../img/graph.svg";
 import Laptop from "../img/laptop.png";
 
 export const HomePage = () => {
+  useEffect(() => {
+    document.title = "AVA - Chatbot for Student Advising";
+  }, []);
+
   return (
     <div className="homePage">
       <Header />
@@ -60,7 +64,8 @@ export const HomePage = () => {
               className="convesation-img"
               src={ConversationImg}
               alt="Sample conversation"
-              width={640} height={584}
+              width={640}
+              height={584}
             />
           </div>
 
@@ -129,7 +134,7 @@ export const HomePage = () => {
           <h1 className="intro-text__text">Try our Live Demo</h1>
           <div className="paragraph-card">
             <img src={Laptop} alt="Laptop" width={600} />
-            <a className="button demo-button" href="/demo">
+            <a className="button demo-button" href="/ava/demo">
               Launch AVA
               <svg
                 className="arrow"

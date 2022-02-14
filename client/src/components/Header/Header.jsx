@@ -11,7 +11,7 @@ export const Header = (props) => {
   return (
     <header className="page-header">
       <div className="page-header__container">
-        <a href="/">
+        <a href="/ava">
           <div className="header__logo"> </div>
         </a>
         <ul className="menu">

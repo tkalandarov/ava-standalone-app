@@ -146,10 +146,10 @@
   transition: all 0.5s;
 }
 
-.connectCheckout:hover {
+.connectFormSubmit:hover {
   background-color: #765cff;
 }
 
-.connectCheckout > span {
+.connectFormSubmit > span {
   line-height: 1em;
 }
