@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 import AppModals from "./components/Modals/AppModals";
+import { EdgyksLanding } from "./pages/EdgyksLanding";
 import { HomePage } from "./pages/HomePage";
 import { DemoPage } from "./pages/DemoPage";
 import StudentSelection from "./pages/StudentSelection";
@@ -17,12 +18,13 @@ const App = () => {
     <Router>
       <div className="app">
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/demo" element={<DemoPage />} />
+          <Route path="/" element={<EdgyksLanding />} />
+          <Route path="/ava" element={<HomePage />} />
+          <Route path="/ava/demo" element={<DemoPage />} />
 
-          <Route path="/demo/student" element={<StudentSelection />} />
+          <Route path="/ava/demo/student" element={<StudentSelection />} />
           {/* <Route path="/demo/student/chat" element={<ChatPage />} /> */}
-          <Route path="/demo/dashboard" element={<Dashboard />} />
+          <Route path="/ava/demo/dashboard" element={<Dashboard />} />
 
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

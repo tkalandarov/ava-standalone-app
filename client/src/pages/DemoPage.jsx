@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Header from "../components/Header/Header";
 
@@ -13,6 +13,10 @@ import "../css/demoPage.css";
 export const DemoPage = () => {
   const [imageState, setImageState] = useState(1); // either 1 or 2
 
+  useEffect(() => {
+    document.title = "AVA Demo - Edgy Knowledge Solutions";
+  }, []);
+
   return (
     <div className="demoPage">
       <Header />
@@ -23,7 +27,7 @@ export const DemoPage = () => {
         <div className="paragraphs-container">
           <a
             className="paragraph student-link"
-            href="/demo/student"
+            href="/ava/demo/student"
             onPointerOver={() => setImageState(1)}
           >
             <div className="paragraph__ico">
@@ -39,7 +43,7 @@ export const DemoPage = () => {
           </a>
           <a
             className="paragraph dashboard-link"
-            href="/demo/dashboard"
+            href="/ava/demo/dashboard"
             onPointerOver={() => setImageState(2)}
           >
             <div className="paragraph__ico">

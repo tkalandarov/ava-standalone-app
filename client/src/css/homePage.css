@@ -41,6 +41,7 @@ main {
   animation-name: fadeUp;
   animation-duration: 0.5s;
   animation-delay: 0.1s;
+  color: #424343;
 }
 
 @media (min-width: 1024px) {
@@ -81,6 +82,7 @@ main {
   padding: 5px 20px;
   background-color: #151515;
   border-radius: 100px;
+  border: none;
   font-size: 16px;
   color: #fff;
   transition: 0.3s ease-in-out;
