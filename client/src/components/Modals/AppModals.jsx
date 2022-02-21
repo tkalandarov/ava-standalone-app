@@ -4,9 +4,10 @@ import "./AppModals.css";
 import ChatModal from "./ChatModal/ChatModal";
 import { ConnectModal } from "./ConnectModal/ConnectModal";
 import { NavMenuModal } from "./NavMenuModal/NavMenuModal";
+import { EdgyksNavModal } from "./EdgyksNavModal/EdgyksNavModal";
 
 
-import { CHAT_MODAL, CONNECT_MODAL, NAVMENU_MODAL } from "./ModalsList";
+import { CHAT_MODAL, CONNECT_MODAL, NAVMENU_MODAL, EDGYKS_MODAL } from "./ModalsList";
 
 import { connect } from "react-redux";
 import { toggleModal } from "../../redux/appActions";
@@ -34,6 +35,9 @@ export const AppModals = (props) => {
           )}
           {props.activeModal === NAVMENU_MODAL && (
             <NavMenuModal onCloseClicked={onCloseClicked} onOpenModal={(modal)=>props.toggleModal(modal)} />
+          )}
+          {props.activeModal === EDGYKS_MODAL && (
+            <EdgyksNavModal onCloseClicked={onCloseClicked} onOpenModal={(modal)=>props.toggleModal(modal)} />
           )}
         </div>
       )}

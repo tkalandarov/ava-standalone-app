@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Header from "../components/Header/Header";
 
 import "../css/dashboard.css";
@@ -9,12 +9,16 @@ import NivoLine from "../components/Dashboard/NivoLine/NivoLine";
 import NivoCalendar from "../components/Dashboard/NivoCalendar/NivoCalendar";
 
 export function Dashboard() {
+  useEffect(() => {
+    document.title = "AVA Dashboard - Edgy Knowledge Solutions";
+  }, []);
+
   return (
     <div className="dashboardPage">
       <Header />
       <div className="page-content">
         <div className="dashboardPage__title">
-          <a href="/demo">Demo </a>|
+          <a href="/ava/demo">Demo </a>|
           <span> Dashboard</span>
         </div>
         <div className="row">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../components/Header/Header";
 import { CHAT_MODAL } from "../components/Modals/ModalsList";
 
@@ -14,6 +14,10 @@ import axios from "axios";
 import "../css/studentSelection.css";
 
 export const StudentSelection = (props) => {
+  useEffect(() => {
+    document.title = "Chat with AVA - Edgy Knowledge Solutions";
+  }, []);
+
   const onStudentSelected = (student) => {
     const students = [Lisa, Tim, Khan];
     const studentObj = students.find(x => x.name == student);
@@ -32,7 +36,7 @@ export const StudentSelection = (props) => {
       <Header />
       <div className="page-content">
         <div className="dashboardPage__title">
-          <a href="/demo">Demo </a>|<span> Chat with AVA</span>
+          <a href="/ava/demo">Demo </a>|<span> Chat with AVA</span>
         </div>
 
         <div className="students">

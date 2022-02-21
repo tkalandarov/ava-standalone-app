@@ -1,0 +1,255 @@
+.edgyksPage .header__logo {
+  background-image: url(../img/edgyks/edgyks_logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding: 0 10px;
+  display: inline-block;
+  margin: 0.5em 0;
+  width: 100px;
+  height: 50px;
+}
+
+.edgyksPage .page-header .menu {
+  display: flex;
+}
+
+@media (max-width: 1024px) {
+  .edgyksPage .page-header .menu {
+    display: none;
+  }
+
+  .edgyksPage .page-header .header__button {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .edgyksPage .mobile-menu-trigger {
+    display: initial;
+  }
+}
+
+@media (min-width: 1024px) {
+  .edgyksPage .intro-text {
+    height: auto;
+  }
+}
+
+.edgyksPage .intro-text__description {
+  line-height: 1.4rem;
+}
+
+.edgyksPage .intro-text__bgElem {
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+}
+
+.edgyksPage .intro-text__bgElem:hover {
+  transform: scale(1.1);
+}
+
+@media (min-width: 1024px) {
+  .edgyksPage .intro-text__bgElem {
+    display: block;
+  }
+}
+
+.intro-text__cogs {
+  background-image: url("../img/edgyks/cogs.png");
+  right: 0;
+  bottom: -70px;
+}
+.intro-text__laptop {
+  background-image: url("../img/edgyks/laptop.png");
+  right: 40%;
+  bottom: 70px;
+}
+.intro-text__earth {
+  background-image: url("../img/edgyks/earth.png");
+  right: 10%;
+  bottom: -70px;
+}
+
+.edgyksPage .section__title {
+  margin: 0 auto;
+  font-size: 40px;
+  text-align: center;
+}
+
+.edgyksPage .features-paragraph {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-evenly;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.edgyksPage .paragraph-card {
+  background-color: #f3f7fb;
+}
+.edgyksPage .features-paragraph .paragraph-card {
+  flex-grow: unset;
+  flex-basis: 30%;
+  width: 30%;
+  padding: 40px;
+  min-height: 640px;
+}
+
+.edgyksPage .features-paragraph .paragraph__img {
+  width: 100px;
+  height: 100px;
+}
+
+@media (max-width: 1440px) {
+  .edgyksPage .features-paragraph .paragraph-card {
+    flex-basis: 100%;
+    width: 100%;
+    min-height: unset;
+    margin-bottom: 25px;
+  }
+}
+
+.edgyksPage .paragraph-card .paragraph__text {
+  color: #636466;
+  margin-bottom: 60px;
+}
+
+.edgyksPage .ava-description{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+}
+
+.edgyksPage .ava-description .paragraphs-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 5%;
+  padding-bottom: 0;
+}
+
+.edgyksPage .ava-description .paragraphs-container .paragraph {
+  flex-grow: unset;
+  flex-basis: 40%;
+  width: 40%;
+
+  display: flex;
+  padding: 32px;
+  margin-top: 0;
+  background: #f3f7fb;
+  color: #1f1f1f;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 960px) {
+  .edgyksPage .ava-description .paragraphs-container .paragraph {
+    flex-grow: unset;
+    flex-basis: 100%;
+    width: 100%;  
+  }
+}
+
+.edgyksPage .ava-description .paragraph:hover {
+  transform: scale(1.05);
+}
+
+.edgyksPage .ava-description .paragraph__title {
+  display: inline-flex;
+  border-bottom: 2px dotted #1f1f1f;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 1.2em;
+}
+
+.edgyksPage .paragraph__ico {
+  margin-top: 14px;
+}
+
+.edgyksPage .paragraph__content {
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 10px;
+}
+
+.edgyksPage
+  .ava-description
+  .paragraph__title:hover
+  + .edgyksPage
+  .ava-description
+  .paragraph__description {
+  display: block;
+}
+
+.edgyksPage .ava-description .paragraph__content {
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 10px;
+}
+
+.edgyksPage .ava-description .paragraph__description {
+  color: #424343;
+}
+
+
+.edgyksPage .ava-description .intro-text__button{
+  margin: 0 auto;
+}
+
+.edgyksPage .contact-footer{
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.edgyksPage .section__titleDescription{
+  padding-top: 10px;
+  color: #818d92;
+}
+
+.edgyksPage .contact-footer .connectFormWrapper{
+  max-width: 600px;
+  padding: 5%;
+}
+
+.edgyksPage .contact-footer .formField {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.edgyksPage .contact-footer .formLabel {
+  text-align: left;
+  font-size: 15px;
+  line-height: 25px;
+  color: #818d92;
+  text-transform: uppercase;
+}
+
+.edgyksPage .contact-footer .formInput {
+  height: 36px;
+  padding: 0 15px;
+  border-radius: 1000px;
+  background: white;
+}
+.edgyksPage .contact-footer .formTextarea {
+  height: 250px;
+  padding: 15px;
+  border-radius: 20px;
+  background: white;
+  resize: none;
+  width: 100%;
+}

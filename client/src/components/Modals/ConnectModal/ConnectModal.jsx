@@ -36,7 +36,7 @@ export const ConnectModal = (props) => {
               <input
                 className="connectOrgInput"
                 type="text"
-                placeholder="Organization"
+                placeholder="Institution"
               />
             </form>
           </div>
