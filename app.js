@@ -106,7 +106,7 @@ const corsOptions = {
     }
   }
 }
-app.use(cors(corsOptions))
+app.use(cors(/*corsOptions*/)) // CORS filtration is turned off
 
 // Tell the app to serve React instead of backend files
 if (process.env.NODE_ENV === "production") {

@@ -4,13 +4,13 @@
   "description": "Web application to demonstrate the abilities of AVA Chatbot",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "set NODE_ENV=production && node app.js",
     "server": "nodemon app.js",
     "client": "npm run start --prefix client",
     "client:install": "npm install --prefix client",
     "client:build": "npm run build --prefix client",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "set NODE_ENV=development && concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Timur Kalandarov <tkalandarov@usf.edu>",
   "license": "ISC",
