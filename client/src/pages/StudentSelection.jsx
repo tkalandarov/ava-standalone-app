@@ -20,8 +20,8 @@ export const StudentSelection = (props) => {
 
   const onStudentSelected = (student) => {
     const students = [Lisa, Tim, Khan];
-    const studentObj = students.find(x => x.name == student);
-    axios.post("http://localhost:5000/student", {
+    const studentObj = students.find(x => x.name === student);
+    axios.post("/student", {
       id: studentObj.id
     })
     .then(res => {
