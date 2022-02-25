@@ -10,7 +10,7 @@ const uuid = require("uuid");
 
 const app = express();
 
-const PORT = config.get("port") || 5000;
+const PORT = process.env.PORT || config.get("port");
 
 const projectId = config.get("project_id");
 const googleCredentials = config.get("google_credentials");
