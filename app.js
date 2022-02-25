@@ -26,7 +26,6 @@ firebaseAdmin.initializeApp({
 const db = firebaseAdmin.database();
 
 app.use(express.json());
-app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "client/public")));
 
@@ -93,11 +92,28 @@ async function chat(query) {
     return avaResponse;
 }
 
+// Set up CORS middleware
+const whitelist = ['http://localhost:3000', 'http://localhost:5000', 'https://ava-standalone-app.herokuapp.com/']
+const corsOptions = {
+  origin: function (origin, callback) {
+    console.log("** Origin of request " + origin)
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      console.log("Origin acceptable")
+      callback(null, true)
+    } else {
+      console.log("Origin rejected")
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+app.use(cors(corsOptions))
+
+// Tell the app to serve React instead of backend files
 if (process.env.NODE_ENV === "production") {
-    app.use("/", express.static(path.join(__dirname, "client", "build")));
+    app.use("/", express.static(path.join(__dirname, "client/build")));
 
     app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+        res.sendFile(path.resolve(__dirname, "client/build", "index.html"));
     })
 }
 
