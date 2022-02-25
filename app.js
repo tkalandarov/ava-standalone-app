@@ -45,8 +45,7 @@ async function getStudentData(id) {
     return snapshot.val();
 }
 
-async function getDynamicResponse(intentTopic)
-{
+async function getDynamicResponse(intentTopic) {
     const snapshot = await db.ref(`/universities/0/dynamicIntents/${intentTopic}`).once("value");
     return snapshot.val();
 }
@@ -92,6 +91,14 @@ async function chat(query) {
     }
 
     return avaResponse;
+}
+
+if (process.env.NODE_ENV === "production") {
+    app.use("/", express.static(path.join(__dirname, "client", "build")));
+
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    })
 }
 
 async function start() {
