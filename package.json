@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Web application to demonstrate the abilities of AVA Chatbot",
   "main": "app.js",
-  "homepage": "https://ava-standalone-app.herokuapp.com/",
   "scripts": {
     "start": "set NODE_ENV=production && node app.js",
     "server": "nodemon app.js",
