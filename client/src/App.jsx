@@ -18,7 +18,7 @@ const App = () => {
     <Router>
       <div className="app">
         <Routes>
-          {/* <Route exact path="/" element={<EdgyksLanding />} /> */}
+          <Route exact path="/" element={<EdgyksLanding />} />
           <Route path="/ava" element={<HomePage />} />
           <Route path="/ava/demo" element={<DemoPage />} />
 
@@ -26,8 +26,7 @@ const App = () => {
           {/* <Route path="/demo/student/chat" element={<ChatPage />} /> */}
           <Route path="/ava/demo/dashboard" element={<Dashboard />} />
 
-          {/* <Route path="*" element={<Navigate to="/" />} /> */}
-          <Route path="*" element={<EdgyksLanding />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
       <AppModals />
