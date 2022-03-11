@@ -27,7 +27,7 @@ const db = firebaseAdmin.database();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "client/public")));
+//app.use(express.static(path.join(__dirname, "client/public")));
 
 app.post('/student', async (req, res) => {
     currUser = await getStudentData(req.body.id);
@@ -113,7 +113,7 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "./client/build")));
 
     app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "client/build", "index.html"));
+        res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
     })
 }
 
