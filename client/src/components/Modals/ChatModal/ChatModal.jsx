@@ -36,7 +36,7 @@ export const ChatModal = (props) => {
       sentByUser: true
     });
 
-    axios.post("http://localhost:5000/chat", {
+    axios.post("/chat", {
       query: userInput
     })
     .then(res => {

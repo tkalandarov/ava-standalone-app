@@ -215,19 +215,19 @@ body {
 }
 @font-face {
   font-family: "jakarta-text";
-  src: url("../fonts/PlusJakartaText-Regular.otf");
+  src: url("../fonts/PlusJakartaSans-Regular.woff2");
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: "jakarta-display";
-  src: url("../fonts/PlusJakartaDisplay-Regular.otf");
+  src: url("../fonts/PlusJakartaSans-Regular.woff2");
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: "jakarta-display-light";
-  src: url("../fonts/PlusJakartaDisplay-Light.otf");
+  src: url("../fonts/PlusJakartaSans-Light.woff2");
   font-weight: 400;
   font-display: swap;
 }

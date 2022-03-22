@@ -18,7 +18,7 @@ const App = () => {
     <Router>
       <div className="app">
         <Routes>
-          <Route path="/" element={<EdgyksLanding />} />
+          <Route exact path="/" element={<EdgyksLanding />} />
           <Route path="/ava" element={<HomePage />} />
           <Route path="/ava/demo" element={<DemoPage />} />
 

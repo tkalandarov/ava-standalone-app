@@ -215,7 +215,6 @@ export const EdgyksLanding = (props) => {
                   id="connectNameInput"
                   className="formInput"
                   type="text"
-                  placeholder="Sydney Discroll"
                 />
               </div>
               <div className="formField">
@@ -226,7 +225,6 @@ export const EdgyksLanding = (props) => {
                   id="connectEmailInput"
                   className="formInput"
                   type="email"
-                  placeholder="example@domain.com"
                 />
               </div>
               <div className="formField">
@@ -237,7 +235,6 @@ export const EdgyksLanding = (props) => {
                   id="connectOrgInput"
                   className="formInput"
                   type="text"
-                  placeholder="University of South Florida"
                 />
               </div>
               <div className="formField">

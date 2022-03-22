@@ -26,6 +26,16 @@ coverage
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
+
+# Firebase Hosting
+.firebaserc
+.firebase/
+firebase-hosting-pull-request.yml
+firebase-debug.log
+
+# Build generated
+build/
+
 # Dependency directories
 node_modules
 jspm_packages

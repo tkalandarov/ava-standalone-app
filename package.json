@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "description": "Web application to demonstrate the abilities of AVA Chatbot",
   "main": "app.js",
-  "proxy": "http://localhost:3000",
+  "homepage": "https://ava-standalone-app.herokuapp.com/",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node app.js",
+    "start": "set NODE_ENV=production && node app.js",
     "server": "nodemon app.js",
     "client": "npm run start --prefix client",
     "client:install": "npm install --prefix client",
     "client:build": "npm run build --prefix client",
-    "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\""
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "dev": "set NODE_ENV=development && concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Timur Kalandarov <tkalandarov@usf.edu>",
   "license": "ISC",
