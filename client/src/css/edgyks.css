@@ -253,3 +253,19 @@
   resize: none;
   width: 100%;
 }
+
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.red {
+  color: red;
+}

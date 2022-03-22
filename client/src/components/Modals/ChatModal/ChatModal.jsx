@@ -36,7 +36,9 @@ export const ChatModal = (props) => {
       sentByUser: true
     });
 
-    axios.post("/chat", {
+    const postURL = process.env.NODE_ENV === "production" ? "/chat" : "http://localhost:5000/chat"; // Workaround because the proxy in package.json is not working (others have had this problem too)
+
+    axios.post(postURL, {
       query: userInput
     })
     .then(res => {
