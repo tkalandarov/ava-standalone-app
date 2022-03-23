@@ -8,12 +8,16 @@ const dialogflow = require("@google-cloud/dialogflow");
 const firebaseAdmin = require("firebase-admin")
 const uuid = require("uuid");
 
+// const nodemailer = require("nodemailer");
+
 const app = express();
 
 const PORT = process.env.PORT || config.get("port");
 
 const projectId = config.get("project_id");
 const googleCredentials = config.get("google_credentials");
+
+// const gmailCredentials = config.get("gmail_credentials");
 
 let currUser;
 
@@ -25,8 +29,24 @@ firebaseAdmin.initializeApp({
 
 const db = firebaseAdmin.database();
 
+// Set up CORS middleware
+const whitelist = ['http://localhost:3000', 'http://localhost:5000', 'https://ava-standalone-app.herokuapp.com/']
+const corsOptions = {
+  origin: function (origin, callback) {
+    console.log("** Origin of request " + origin);
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      console.log("Origin acceptable");
+      callback(null, true);
+    } else {
+      console.log("Origin rejected");
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors(/*corsOptions*/)); // CORS filtration is turned off
 //app.use(express.static(path.join(__dirname, "client/public")));
 
 app.post('/student', async (req, res) => {
@@ -38,6 +58,31 @@ app.post("/chat", async (req, res) => {
     const response = await chat(req.body.query);
     res.send(response);
 });
+
+// app.post("/connect", (req, res) => {
+//     const { name, email, institution } = req.body;
+//     const transporter = nodemailer.createTransport({
+//         service: "gmail",
+//         auth: {
+//             user: gmailCredentials.email,
+//             pass: gmailCredentials.password
+//         }
+//     });
+//     const mailOptions = {
+//         from: gmailCredentials.email,
+//         to: email,
+//         subject: "Provide Additional Info for AVA Usage",
+//         text: `Hi, ${name}! Thank you for showing interest in the Academic Virtual Agent (AVA). Please provide more details about how the ${institution} wants to use AVA so we can figure out the best way to integrate it.` 
+//     };
+//     transporter.sendMail(mailOptions, (error, info) => {
+//         if (error) {
+//             res.send(false);
+//         }
+//         else {
+//             res.send(true);
+//         }
+//     })
+// });
 
 async function getStudentData(id) {
     const snapshot = await db.ref(`/universities/0/students/${id}`).once("value");
@@ -59,7 +104,6 @@ async function chat(query) {
         }
     });
 
-    console.log(projectId);
     const sessionPath = sessionClient.projectAgentSessionPath(projectId, sessionId);
 
     const request = {
@@ -91,22 +135,6 @@ async function chat(query) {
 
     return avaResponse;
 }
-
-// Set up CORS middleware
-const whitelist = ['http://localhost:3000', 'http://localhost:5000', 'https://ava-standalone-app.herokuapp.com/']
-const corsOptions = {
-  origin: function (origin, callback) {
-    console.log("** Origin of request " + origin)
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      console.log("Origin acceptable")
-      callback(null, true)
-    } else {
-      console.log("Origin rejected")
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
-}
-app.use(cors(/*corsOptions*/)) // CORS filtration is turned off
 
 // Tell the app to serve React instead of backend files
 if (process.env.NODE_ENV === "production") {

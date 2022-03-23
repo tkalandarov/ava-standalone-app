@@ -1,4 +1,6 @@
-import React, {useEffect} from "react";
+import React, {useState, useEffect} from "react";
+import firebase from "firebase/app";
+import "firebase/firestore";
 
 import "../css/edgyks.css";
 import EdgyksHeader from "../components/Edgyks/EdgyksHeader";
@@ -18,6 +20,68 @@ import plusImg from "../img/edgyks/plus.svg";
 import tasksTickImg from "../img/edgyks/tasks_tick.svg";
 
 export const EdgyksLanding = (props) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [institution, setInstitution] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [thanks, setThanks] = useState("hidden mt-50");
+
+  // Check to make sure Firebase connection is established
+  if (!firebase.apps.length) {
+    firebase.initializeApp({
+      apiKey: "AIzaSyALm3XqL51hipbPeLEHVBWTqFFZA3MZaO8",
+      authDomain: "edgy-8035d.firebaseapp.com",
+      projectId: "edgy-8035d",
+      storageBucket: "edgy-8035d.appspot.com",
+      messagingSenderId: "663819713946",
+      appId: "1:663819713946:web:1376d4f5b80b8144d98e23",
+      measurementId: "G-LR3NXBMY59"
+    });
+  } else {
+    firebase.app(); // If already initialized, use that one
+  }
+
+  const checkDisabled = () => {
+    if (name === "" || email === "" || institution === "") {
+      setIsDisabled(true);
+
+      if (thanks !== "hidden mt-50")
+        setThanks("hidden mt-50");
+    }
+    else {
+      setIsDisabled(false);
+    }
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const contact = {name, email, institution, message};
+
+    const firestore = firebase.firestore();
+    const newDocRef = firestore.collection("contacts").doc();
+    newDocRef.set({
+      ...contact,
+      timestamp: Date()
+    }).then(() => {
+      console.log("Success");
+
+      // Clear out form fields
+      setName("");
+      setEmail("");
+      setInstitution("");
+      setMessage("");
+      setIsDisabled(true);
+
+      // Show thank you message
+      setThanks("block mt-50");
+    }).catch(err => {
+      console.log("Failed", err);
+    });
+  }
+
   useEffect(() => {
     document.title = "Edgy - Cutting Edge Solutions for Modern Higher Education";
   }, []);
@@ -212,9 +276,12 @@ export const EdgyksLanding = (props) => {
                   Name
                 </label>
                 <input
+                  name="name"
                   id="connectNameInput"
                   className="formInput"
                   type="text"
+                  value={name}
+                  onChange={e => {setName(e.target.value); checkDisabled();}}
                 />
               </div>
               <div className="formField">
@@ -222,9 +289,12 @@ export const EdgyksLanding = (props) => {
                   Email
                 </label>
                 <input
+                  name="email"
                   id="connectEmailInput"
                   className="formInput"
                   type="email"
+                  value={email}
+                  onChange={e => {setEmail(e.target.value); checkDisabled();}}
                 />
               </div>
               <div className="formField">
@@ -232,9 +302,12 @@ export const EdgyksLanding = (props) => {
                   Institution
                 </label>
                 <input
+                  name="institution"
                   id="connectOrgInput"
                   className="formInput"
                   type="text"
+                  value={institution}
+                  onChange={e => {setInstitution(e.target.value); checkDisabled();}}
                 />
               </div>
               <div className="formField">
@@ -242,22 +315,27 @@ export const EdgyksLanding = (props) => {
                   Message
                 </label>
                 <textarea
+                  name="message"
                   id="connectMsgInput"
                   name="connectMsgInput"
                   className="formTextarea"
                   placeholder="Optional: Give us a short message about your situation or what you're interested in!"
+                  value={message}
+                  onChange={e => {setMessage(e.target.value); checkDisabled();}}
                 ></textarea>
               </div>
             </form>
           </div>
           <button
             type="submit"
+            onClick={handleSubmit}
             className="connectFormSubmit"
             form="connectForm"
+            disabled={isDisabled}
           >
             <span>Submit</span>
           </button>
-
+          <h2 className={thanks}>Thank you for choosing Edgy Knowledge Solutions. Look for an email from us coming soon!</h2>
           <h5>© Edgy Knowledge Solutions</h5>
         </footer>
       </main>

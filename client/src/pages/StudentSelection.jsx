@@ -21,7 +21,8 @@ export const StudentSelection = (props) => {
   const onStudentSelected = (student) => {
     const students = [Lisa, Tim, Khan];
     const studentObj = students.find(x => x.name === student);
-    axios.post("/student", {
+    const postURL = process.env.NODE_ENV === "production" ? "/student" : "http://localhost:5000/student"; // Workaround because the proxy in package.json is not working (others have had this problem too)
+    axios.post(postURL, {
       id: studentObj.id
     })
     .then(res => {
